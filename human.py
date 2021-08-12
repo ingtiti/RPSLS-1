@@ -9,11 +9,11 @@ from player import Player
 class Human(Player):
     def __init__(self):
         super().__init__()
-        pass
+        self.set_player_name()
     
     #set name, choose a gesture, set a score
     def set_player_name(self):
-        self.name = input('Enter your name: ')
+        self.name = input('\nHello, Player.  Please Enter your name:\n')
 
     #fix this. use integers for easier validation instead of words
     def choose_gesture(self):
@@ -33,3 +33,6 @@ class Human(Player):
 
     def set_wins(self):
         self.wins += 1
+
+    def __str__(self):
+        return self.name

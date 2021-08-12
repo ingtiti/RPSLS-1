@@ -10,6 +10,7 @@ import random
 class Computer(Player):
     def __init__(self):
         super().__init__()
+        self.set_name()
 
     #set name, choose a gesture, set a score
     def set_name(self):
@@ -17,7 +18,10 @@ class Computer(Player):
 
     #override method from Player to use with random integer
     def choose_gesture(self):
-        self.choice = self.gesture_list[random.randint(0.4)]
+        self.choice = random.choice(self.gesture_list)
 
     def set_wins(self):
         self.wins += 1
+        
+    def __str__(self):
+        return self.name
