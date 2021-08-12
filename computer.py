@@ -17,5 +17,4 @@ class Computer(Player):
         choice = random.randint(0, len(self.gesture_list) - 1)
         action = self.gesture_list(choice)
         return action
-
         pass
