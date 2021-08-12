@@ -7,10 +7,15 @@
 from player import Player
 
 class Human(Player):
-    def __init__(self, gesture): 
-        self.choose_gesture = gesture
+    def __init__(self):
+        super().__init__()
         pass
+    
+    #set name, choose a gesture, set a score
+    def set_player_name(self):
+        self.name = input('Enter your name: ')
 
+    #fix this. use integers for easier validation instead of words
     def choose_gesture(self):
         user_choice = input("Choose your move: \npaper\nrock\nscissors\nlizard\nspock")
         if(user_choice == 'paper'):
@@ -26,4 +31,5 @@ class Human(Player):
         else:
             self.choose_gesture()
 
-        pass
+    def set_wins(self):
+        self.wins += 1

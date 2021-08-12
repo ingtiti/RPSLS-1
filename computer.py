@@ -8,13 +8,16 @@ from player import Player
 import random
 
 class Computer(Player):
-    def __init__(self, name):
-        self.name = name
-        self.wins = 0
-        self.gesture = self.choose_gesture()
+    def __init__(self):
+        super().__init__()
 
+    #set name, choose a gesture, set a score
+    def set_name(self):
+        self.name = "Computer"
+
+    #override method from Player to use with random integer
     def choose_gesture(self):
-        choice = random.randint(0, len(self.gesture_list) - 1)
-        action = self.gesture_list(choice)
-        return action
-        pass
+        self.choice = self.gesture_list[random.randint(0.4)]
+
+    def set_wins(self):
+        self.wins += 1

@@ -9,14 +9,13 @@ from computer import Computer
 
 class Game:
     def __init__(self):
-        # pass
-        self.player_one = Human()
-        # self.player_two = None #undecided requires user input for AI or another human
+        self.player_one = Human().set_player_name
+        self.player_two = None
 
     def run_game(self):
         self.intro()
         self.rules()
-        pass
+        self.determine_game_type()
     
     def intro(self):
         print("\n\nWelcome to Paper, Rock, Scissors, Lizard, Spock")
@@ -24,20 +23,20 @@ class Game:
 
     def rules(self):
         print("The rules are as follows:")
-        print("Rock crushes Scissors")
-        print("Scissors cuts Paper")
-        print("Paper covers Rock")
-        print("Rock crushes Lizard")
-        print("Lizard poisons Spock")
-        print("Spock smashes Scissors")
-        print("Scissors decapitate Lizard")
-        print("Lizard eats Paper")
-        print("Paper disproves Spock")
-        print("Spock vaporizes Rock")
-
+        print("Paper disproves Spock and covers Rock") 
+        print("Rock crushes Scissors and Lizard")
+        print("Scissors cuts Paper and decapitates Lizard")
+        print("Lizard poisons Spock and eats Paper")
+        print("Spock smashes Scissors and vaporizes Rock")
 
     def determine_game_type(self):
-        pass
+        game_choice = int(input("Enter 1 for a game against the Computer, 2 for a game against a second human"))
+        if (game_choice == 1):
+            self.player_two = Computer()
+        elif(game_choice == 2):
+            self.player_two = Human()
+        else:
+            self.determine_game_type()
 
     def determine_winner(self):
         pass

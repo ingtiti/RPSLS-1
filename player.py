@@ -4,12 +4,11 @@
 #Date:  12 Aug 2021
 
 class Player:
-    def __init__(self, name, wins):
-        self.name = name
-        self.wins = wins
-        self.choose_gesture()
+    def __init__(self):
+        self.name = ''
+        self.wins = 0
         self.gesture_list = ["rock", "paper", "scissors", "lizard", "spock"]
-        pass
+        self.choice = ''
 
     def choose_gesture(self):
         pass
