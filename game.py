@@ -17,6 +17,7 @@ class Game:
         self.rules()
         self.determine_game_type()
         self.create_round()
+        self.overall_winner()
     
     def intro(self):
         print('\nWelcome to Paper, Rock, Scissors, Lizard, Spock')
@@ -32,7 +33,7 @@ class Game:
         print("Spock smashes Scissors and vaporizes Rock\n")
 
     def determine_game_type(self):
-        game_choice = int(input(f'{self.player_one}, Select your opponent from the following:\n1-Computer\n2-Human Opponent\nYour Selection: '))
+        game_choice = int(input(f'{self.player_one}, Enter the number to choose your opponent:\n1-Computer\n2-Human Opponent\nYour Selection: '))
         if (game_choice == 1):
             self.player_two = Computer()
             print(f'Opponents confirmed: {self.player_one} vs. {self.player_two}')
@@ -42,41 +43,45 @@ class Game:
         else:
             self.determine_game_type()
 
-    # player gesture must defeat other player gesture, while player has less than 2 of 3 wins
-    # game is over when player has 2 wins
+    #creates a round of gameplay and keeps best of three format
     def create_round(self):
         while (self.player_one.wins < 2 and self.player_two.wins < 2):
             p1_choice = self.player_one.choose_gesture()
-            print(p1_choice)
+            print(f'{p1_choice}')
             p2_choice = self.player_two.choose_gesture()
-            print(p2_choice)
+            print(f'{p2_choice}')
             self.round_winner(p1_choice, p2_choice)
         
         if (self.player_one.wins == 2 or self.player_two.wins == 2):
             self.overall_winner()
 
+    #determine who wins based on input, calls _wins method for winner (p1 or p2)
     def round_winner(self,p1_choice, p2_choice):
         if (p1_choice == p2_choice):
             print(f'Tie Game. No Points Awarded')
-        elif(p1_choice == 1 and (p2_choice == 2 or p2_choice == 3)):
-            print(f'{p1_choice} beats {p2_choice}')
-            self.player_one.set_wins()
-        elif(p1_choice == 2 and (p2_choice == 0 or p2_choice == 4)):
-            print(f'{p1_choice} beats {p2_choice}')
-            self.player_one.set_wins()
-        elif(p1_choice == 3 and (p2_choice == 1 or p2_choice == 3)):
-            print(f'{p1_choice} beats {p2_choice}')
-            self.player_one.set_wins()
-        elif(p1_choice == 4 and (p2_choice == 1 or p2_choice == 4)):
-            print(f'{p1_choice} beats {p2_choice}')
-            self.player_one.set_wins()
-        elif(p1_choice == 5 and (p2_choice == 0 or p2_choice == 2)):
-            print(f'{p1_choice} beats {p2_choice}')
-            self.player_one.set_wins()
+        elif(p1_choice == "Rock" and (p2_choice == "Scissors" or p2_choice == "Lizard")):
+            self.p1_wins(p1_choice, p2_choice)
+        elif(p1_choice == "Paper" and (p2_choice == "Rock" or p2_choice == "Spock")):
+            self.p1_wins(p1_choice, p2_choice)
+        elif(p1_choice == "Scissors" and (p2_choice == "Paper" or p2_choice == "Lizard")):
+            self.p1_wins(p1_choice, p2_choice)
+        elif(p1_choice == "Lizard" and (p2_choice == "Paper" or p2_choice == "Spock")):
+            self.p1_wins(p1_choice, p2_choice)
+        elif(p1_choice == "Spock" and (p2_choice == "Rock" or p2_choice == "Scissors")):
+            self.p1_wins(p1_choice, p2_choice)
         else:
-            print(f'{p2_choice} beats {p1_choice}')
-            self.player_two.set_wins()
+            self.p2_wins(p1_choice, p2_choice)
+            
+    def p1_wins(self, p1_choice, p2_choice):
+        print(f'{p1_choice} beats {p2_choice}. {self.player_one} wins this round')
+        self.player_one.set_wins()
+    
+    def p2_wins(self, p1_choice, p2_choice):
+        print(f'{p2_choice} beats {p1_choice}. {self.player_two} wins this round!')
+        self.player_two.set_wins()
 
-    #a player must have 2 wins to be declared winner
     def overall_winner(self):
-        pass
+        if(self.player_one.wins == 2):
+            print(f'{self.player_one} wins the game!')
+        else:
+            print(f'{self.player_two} wins the game!')

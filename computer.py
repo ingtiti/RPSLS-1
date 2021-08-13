@@ -18,7 +18,7 @@ class Computer(Player):
 
     #override method from Player to use with random integer
     def choose_gesture(self):
-        self.choice = random.randint(0, len(self.gesture_list)-1)
+        self.choice = random.randint(0,4)
         if(self.choice == 0):
             return 'Rock'
         elif(self.choice == 1):
