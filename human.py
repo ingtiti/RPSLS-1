@@ -1,4 +1,4 @@
-#Name:  Stas Mironeko, Matt Keplinger
+#Name:  Stas Mironenko, Matt Keplinger
 #Title: RSLPS
 #File:  human.py
 #Date:  12 Aug 2021
@@ -17,19 +17,7 @@ class Human(Player):
 
     #fix this. use integers for easier validation instead of words
     def choose_gesture(self):
-        user_choice = input("Choose your move: \npaper\nrock\nscissors\nlizard\nspock")
-        if(user_choice == 'paper'):
-            gesture = user_choice
-        elif(user_choice == 'rock'):
-            gesture = user_choice
-        elif(user_choice == 'scissors'):
-            gesture = user_choice
-        elif(user_choice == 'lizard'):
-            gesture = user_choice
-        elif(user_choice == 'spock'):
-            gesture = user_choice
-        else:
-            self.choose_gesture()
+        self.choice = int(input(f'\n{self.name}, Choose your move: \n1-rock\n2-paper\n3-scissors\n4-lizard\n5-spock\nYour Choice: '))
 
     def set_wins(self):
         self.wins += 1

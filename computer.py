@@ -1,4 +1,4 @@
-#Name:  Stas Mironeko, Matt Keplinger
+#Name:  Stas Mironenko, Matt Keplinger
 #Title: RSLPS
 #File:  computer.py
 #Date:  12 Aug 2021
@@ -18,10 +18,12 @@ class Computer(Player):
 
     #override method from Player to use with random integer
     def choose_gesture(self):
-        self.choice = random.choice(self.gesture_list)
+        computer_choice = random.randint(0, len(self.gesture_list)-1)
+    #print(self.gesture_list[choice])
 
     def set_wins(self):
         self.wins += 1
         
     def __str__(self):
         return self.name
+       

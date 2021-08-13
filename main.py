@@ -1,4 +1,4 @@
-#Name:  Stas Mironeko, Matt Keplinger
+#Name:  Stas Mironenko, Matt Keplinger
 #Title: RSLPS
 #File:  main.py
 #Date:  12 Aug 2021
