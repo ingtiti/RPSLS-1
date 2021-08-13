@@ -46,9 +46,9 @@ class Game:
     def create_round(self):
         while (self.player_one.wins < 2 and self.player_two.wins < 2):
             p1_choice = self.player_one.choose_gesture()
-            print(f'{p1_choice}')
             p2_choice = self.player_two.choose_gesture()
-            print(f'{p2_choice}')
+            print(f'\n{self.player_one} chooses {p1_choice}')
+            print(f'{self.player_two} chooses {p2_choice}')
             self.round_winner(p1_choice, p2_choice)
         
         if (self.player_one.wins == 2 or self.player_two.wins == 2):

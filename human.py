@@ -17,17 +17,12 @@ class Human(Player):
 
     #fix this. use integers for easier validation instead of words
     def choose_gesture(self):
-        self.choice = int(input(f'\n{self.name}, Choose your move: \n1-rock\n2-paper\n3-scissors\n4-lizard\n5-spock\n\nYour Choice (enter #): '))
-        if(self.choice == 1):
-            return self.gesture_list[self.choice - 1]
-        elif(self.choice == 2):
-            return self.gesture_list[self.choice - 1]
-        elif(self.choice == 3):
-            return self.gesture_list[self.choice - 1]
-        elif(self.choice == 4):
-            return self.gesture_list[self.choice - 1]
-        elif(self.choice == 5):
-            return self.gesture_list[self.choice - 1]
+        self.choice = int(input(f'\n{self.name}, Choose your move: \n1-rock\n2-paper\n3-scissors\n4-lizard\n5-spock\nYour Choice (enter #): '))
+        allowed_nums = [1,2,3,4,5]
+        if self.choice in allowed_nums:
+                return self.gesture_list[self.choice - 1]
+        else:
+            self.choose_gesture()
 
     def set_wins(self):
         self.wins += 1
