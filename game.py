@@ -19,7 +19,7 @@ class Game:
         self.create_round()
     
     def intro(self):
-        print("\nWelcome to Paper, Rock, Scissors, Lizard, Spock")
+        print('\nWelcome to Paper, Rock, Scissors, Lizard, Spock')
         print(f'The game will be played in a "Best of 3" format\n')
         print(f'A tie will neither award or subtract points from either player')
 
@@ -60,22 +60,22 @@ class Game:
             print(f'Tie Game. No Points Awarded')
         elif(p1_choice == 1 and (p2_choice == 2 or p2_choice == 3)):
             print(f'{p1_choice} beats {p2_choice}')
-            self.player_one.wins += 1
+            self.player_one.set_wins()
         elif(p1_choice == 2 and (p2_choice == 0 or p2_choice == 4)):
             print(f'{p1_choice} beats {p2_choice}')
-            self.player_one.wins += 1
+            self.player_one.set_wins()
         elif(p1_choice == 3 and (p2_choice == 1 or p2_choice == 3)):
             print(f'{p1_choice} beats {p2_choice}')
-            self.player_one.wins += 1
+            self.player_one.set_wins()
         elif(p1_choice == 4 and (p2_choice == 1 or p2_choice == 4)):
             print(f'{p1_choice} beats {p2_choice}')
-            self.player_one.wins += 1
+            self.player_one.set_wins()
         elif(p1_choice == 5 and (p2_choice == 0 or p2_choice == 2)):
             print(f'{p1_choice} beats {p2_choice}')
-            self.player_one.wins += 1
+            self.player_one.set_wins()
         else:
             print(f'{p2_choice} beats {p1_choice}')
-            self.player_two.wins +=1
+            self.player_two.set_wins()
 
     #a player must have 2 wins to be declared winner
     def overall_winner(self):
