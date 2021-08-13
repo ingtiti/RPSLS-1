@@ -17,7 +17,6 @@ class Game:
         self.rules()
         self.determine_game_type()
         self.create_round()
-        self.overall_winner()
     
     def intro(self):
         print('\nWelcome to Paper, Rock, Scissors, Lizard, Spock')
