@@ -20,8 +20,8 @@ class Game:
     
     def intro(self):
         print('\nWelcome to Paper, Rock, Scissors, Lizard, Spock')
-        print(f'The game will be played in a "Best of 3" format\n')
-        print(f'A tie will neither award or subtract points from either player')
+        print(f'The game will be played in a "Best of 3" format')
+        print(f'A tie will neither award or subtract points from either player\n')
 
     def rules(self):
         print("The rules are as follows:")
