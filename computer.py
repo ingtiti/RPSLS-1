@@ -18,8 +18,7 @@ class Computer(Player):
 
     #override method from Player to use with random integer
     def choose_gesture(self):
-        computer_choice = random.randint(0, len(self.gesture_list)-1)
-    #print(self.gesture_list[choice])
+        self.choice = random.randint(0, len(self.gesture_list)-1)
 
     def set_wins(self):
         self.wins += 1

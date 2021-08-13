@@ -74,7 +74,7 @@ class Game:
             print(f'{p1_choice} beats {p2_choice}')
             self.player_one.wins += 1
         else:
-            print(f'{p2_choice} beat {p1_choice}')
+            print(f'{p2_choice} beats {p1_choice}')
             self.player_two.wins +=1
 
     #a player must have 2 wins to be declared winner
