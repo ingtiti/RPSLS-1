@@ -33,12 +33,14 @@ class Game:
 
     def determine_game_type(self):
         game_choice = int(input(f'{self.player_one}, Enter the number to choose your opponent:\n1-Computer\n2-Human Opponent\nYour Selection: '))
-        if (game_choice == 1):
-            self.player_two = Computer()
-            print(f'Opponents confirmed: {self.player_one} vs. {self.player_two}')
-        elif(game_choice == 2):
-            self.player_two = Human()
-            print(f'Opponents confirmed: {self.player_one} vs. {self.player_two}')
+        allowed_nums = [1,2]
+        if game_choice in allowed_nums:
+            if (game_choice == 1):
+                self.player_two = Computer()
+                print(f'Opponents confirmed: {self.player_one} vs. {self.player_two}')
+            elif(game_choice == 2):
+                self.player_two = Human()
+                print(f'Opponents confirmed: {self.player_one} vs. {self.player_two}')
         else:
             self.determine_game_type()
 
