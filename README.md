@@ -5,5 +5,5 @@ Classic game: Rock, Paper, Scissors with the addition of Lizard, Spock</br></br>
 </br>
 </br>
 UML for RPSLS Project</br>
-![image](https://user-images.githubusercontent.com/24422068/129395281-50cc4a6c-6948-4fa1-9db0-b38df0982754.png)
+![image](https://user-images.githubusercontent.com/24422068/129397466-62d89cd8-1f89-4543-96b3-62c96273d25a.png)
 
