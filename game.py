@@ -74,7 +74,7 @@ class Game:
             self.p2_wins(p1_choice, p2_choice)
             
     def p1_wins(self, p1_choice, p2_choice):
-        print(f'{p1_choice} beats {p2_choice}. {self.player_one} wins this round')
+        print(f'{p1_choice} beats {p2_choice}. {self.player_one} wins this round!')
         self.player_one.set_wins()
     
     def p2_wins(self, p1_choice, p2_choice):

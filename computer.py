@@ -5,7 +5,7 @@
 
 #imports
 from player import Player
-import random
+from random import choice
 
 class Computer(Player):
     def __init__(self):
@@ -18,17 +18,8 @@ class Computer(Player):
 
     #override method from Player to use with random integer
     def choose_gesture(self):
-        self.choice = random.randint(0,4)
-        if(self.choice == 0):
-            return 'Rock'
-        elif(self.choice == 1):
-            return 'Paper'
-        elif(self.choice == 2):
-            return 'Scissors'
-        elif(self.choice == 3):
-            return 'Lizard'
-        elif(self.choice == 4):
-            return 'Spock'
+        self.choice = choice(self.gesture_list)
+        return self.choice
 
     def set_wins(self):
         self.wins += 1
