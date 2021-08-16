@@ -72,7 +72,7 @@ class Game:
             self.p1_wins(p1_choice, p2_choice)
         else:
             self.p2_wins(p1_choice, p2_choice)
-            
+    # Methods for winner output and increment of win counter
     def p1_wins(self, p1_choice, p2_choice):
         print(f'{p1_choice} beats {p2_choice}. {self.player_one} wins this round!')
         self.player_one.set_wins()
@@ -86,3 +86,13 @@ class Game:
             print(f'{self.player_one} wins the game!')
         else:
             print(f'{self.player_two} wins the game!')
+        self.play_again()
+
+    def play_again(self):
+        decision = input('\n\nDo you want to play again? Y/N ')
+        allowed_inputs = ['Y', 'y', 'N', 'n']
+        if decision in allowed_inputs:
+            if decision == 'Y' or decision == 'y':
+                self.run_game()
+            else:
+                exit

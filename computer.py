@@ -12,11 +12,9 @@ class Computer(Player):
         super().__init__()
         self.set_name()
 
-    #set name, choose a gesture, set a score
     def set_name(self):
         self.name = "Computer"
 
-    #override method from Player to use with random integer
     def choose_gesture(self):
         self.choice = choice(self.gesture_list)
         return self.choice
